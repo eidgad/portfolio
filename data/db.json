@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Template 1",
+      "description": "A responsive template with many sections using html and css",
+      "technologies": ["HTML5", "CSS"]
+    },
+    {
+      "id": 2,
+      "title": "To do list",
+      "description": "A hand-made to do list with some funny reacts",
+      "technologies": ["VANILLA JS", "HTML5", "CSS3"]
+    },
+    {
+      "id": 3,
+      "title": "Portfolio",
+      "description": "Full responsive personal website using nuxt and some beautiful css tricks",
+      "technologies": ["HTML5", "CSS3", "Vue.js", "Nuxt.js"]
+    },
+    {
+      "id": 4,
+      "title": "JS Tries",
+      "description": "Making some tries with javascript and css to make some funny things like autowriting headers and personal-clock and emogies' rains",
+      "technologies": ["Vanilla js", "CSS3", "HTML5"]
+    }
+  ],
+  "technologies": [
+    { "name": "HTML5", "loc": "_nuxt/public/images/html.png" },
+    { "name": "CSS3", "loc": "_nuxt/public/images/css.png" },
+    { "name": "JAVASCRIPT", "loc": "_nuxt/public/images/js.png" },
+    { "name": "VUE JS", "loc": "_nuxt/public/images/vue.png" },
+    { "name": "NUXT JS", "loc": "_nuxt/public/images/nxt.png" },
+    { "name": "PYTHON", "loc": "_nuxt/public/images/py.png" },
+    { "name": "C++", "loc": "_nuxt/public/images/cpp.png" },
+    { "name": "SQL", "loc": "_nuxt/public/images/sql.png" },
+    { "name": "GIT", "loc": "_nuxt/public/images/git.png" },
+    { "name": "GITHUB", "loc": "_nuxt/public/images/gthb.png" }
+  ]
+}
