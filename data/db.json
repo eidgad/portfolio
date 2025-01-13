@@ -2,8 +2,8 @@
   "projects": [
     {
       "id": 1,
-      "title": "Template 1",
-      "description": "A responsive template with many sections using html and css",
+      "title": "Templates",
+      "description": "Responsive templates with many sections using html and css",
       "technologies": ["HTML5", "CSS"]
     },
     {

@@ -36,18 +36,10 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     box-shadow: 1px 1px 10px #c1221f !important;
-    animation: scaler 2s ease-in-out infinite;
-    animation-delay: 2s;
+    transition: all 2s ease;
   }
-  @keyframes scaler {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.025);
-    }
-    100% {
-      transform: scale(1);
-    }
+  .hovering:hover {
+    box-shadow: 1px 1px 10px #14213d !important;
+    transform: scale(1.05);
   }
 </style>

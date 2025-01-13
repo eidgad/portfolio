@@ -1,7 +1,7 @@
 <template>
   <div class="container py-5">
     <section class="mb-5">
-      <h2 class="h2 mb-4" style="text-align: center">Featured Projects</h2>
+      <h2 class="h2 mb-4" style="text-align: center">Projects</h2>
       <template>
         <div class="row g-4">
           <div
@@ -39,20 +39,35 @@
   export default {
     data() {
       return {
-        projects: [],
-        technologies: [],
+        projects: null,
+        technologies: null,
       };
     },
-    async mounted() {
-      axios
-        .get("_nuxt/data/db.json")
-        .then((res) => {
-          this.projects = res.data.projects;
-          this.technologies = res.data.technologies;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    methods: {
+      async getdata() {
+        let result = await axios.get("_nuxt/data/db.json");
+        if (result.status == 200) {
+          this.projects = result.data.projects;
+          this.technologies = result.data.technologies;
+          localStorage.setItem(
+            "projects",
+            JSON.stringify(result.data.projects)
+          );
+          localStorage.setItem(
+            "technologies",
+            JSON.stringify(result.data.technologies)
+          );
+        }
+      },
+    },
+    mounted() {
+      let proj = localStorage.getItem("projects");
+      let tech = localStorage.getItem("technologies");
+      if (proj && tech) {
+        this.projects = JSON.parse(proj);
+        this.technologies = JSON.parse(tech);
+      }
+      this.getdata();
     },
   };
 </script>
@@ -71,6 +86,7 @@
     margin: 0 auto 10px auto;
     border-radius: 0 !important;
     animation: lighter 3s ease infinite;
+    transition: all 2s ease-in-out;
   }
   @keyframes lighter {
     0% {

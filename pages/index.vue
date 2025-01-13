@@ -12,34 +12,7 @@
     </div>
     <div class="row">
       <div class="col-lg-8">
-        <personalinfo :data="data" class="mb-4" />
-      </div>
-    </div>
-    <div
-      class="contact d-flex flex-column justify-content-center gap-sm-1 align-items-center"
-    >
-      <h2>Contact</h2>
-      <div
-        class="spans d-flex flex-row justify-content-center gap-sm-2 align-items-center"
-      >
-        <span
-          ><a
-            href="https://www.facebook.com/profile.php?id=100003828019658"
-            target="_blank"
-            rel="noopener noreferrer"
-            >F</a
-          ></span
-        >
-        <span
-          ><a
-            href="https://www.linkedin.com/in/eid-mohamed-754733198"
-            target="_blank"
-            rel="noopener noreferrer"
-            >L</a
-          ></span
-        >
-        <span><a href="tel:+201024816974">W</a></span>
-        <span><a href="mailto:mrlbasiony@gmail.com">G</a></span>
+        <personalinfo :data="data" class="mb-lg-4" />
       </div>
     </div>
   </div>
@@ -74,7 +47,7 @@
 </script>
 <style scope>
   .container {
-    margin: 20px auto;
+    margin: 0.4rem auto;
     border-radius: 5px;
     padding: 1rem;
     box-shadow: 1px 1px 5px #14213d;
@@ -115,11 +88,6 @@
       border: 5px solid transparent;
     }
   }
-  img:hover {
-    transform: scale(1.1);
-    box-shadow: 1px 1px 5px #14213d;
-    transition: all 2s ease-in-out;
-  }
   @keyframes jump {
     0% {
       transform: translateY(0);
@@ -141,6 +109,12 @@
     animation: jump 4s infinite;
     font-size: 4rem;
   }
+  @media (min-width: 362px) {
+    h1 > span {
+      font-size: 3rem;
+    }
+  }
+
   h1 > .l1 {
     animation-delay: 0s;
   }
@@ -176,56 +150,5 @@
   }
   h1:hover {
     color: #c1121f;
-  }
-  .contact {
-    margin-top: 50px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px #14213d;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 50px 10px;
-  }
-  .contact > h2 {
-    transition: all 2s;
-  }
-  .contact:hover > h2 {
-    color: #c1221f;
-  }
-  .contact > .spans {
-    width: 100%;
-    margin-top: 20px;
-  }
-  .contact > .spans > span {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    text-align: center;
-    line-height: 20px;
-    font-size: 15px;
-    border-radius: 50%;
-    color: #ffffff;
-    cursor: pointer;
-    transition: all 2s;
-  }
-  .contact > .spans > span:hover {
-    transform: scale(1.5);
-    box-shadow: 1px 1px 5px #c1221f;
-  }
-
-  .contact > .spans > span:nth-child(1) {
-    background-color: #3b5998;
-  }
-  .contact > .spans > span:nth-child(2) {
-    background-color: #1da1f2;
-  }
-  .contact > .spans > span:nth-child(3) {
-    background-color: #25d366;
-  }
-  .contact > .spans > span:last-child {
-    background-color: #14213d;
-  }
-  .contact > .spans > span > a {
-    color: #ffffff !important;
   }
 </style>

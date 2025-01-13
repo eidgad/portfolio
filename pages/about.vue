@@ -3,15 +3,20 @@
     <h1 class="display-4 mb-4">About Me</h1>
     <div class="row">
       <div class="col-lg-8">
-        <p class="lead mb-4">
-          {{ about.introduction }}
+        <p class="lead mb-5">
+          {{ aboutData.introduction }}
         </p>
-        <h2 class="h3 mt-5 mb-4">Experience</h2>
-        <div class="border-start border-2 ps-4 bl">
-          <div v-for="exp in about.experience" :key="exp.company" class="mb-4">
-            <h3 class="h5">{{ exp.company }}</h3>
-            <p class="text-muted">{{ exp.role }} • {{ exp.period }}</p>
-            <p>{{ exp.description }}</p>
+
+        <h2 class="h3">Experience</h2>
+        <div class="border-start border-3 ps-4">
+          <div
+            v-for="exp in aboutData.experience"
+            :key="exp.company"
+            class="mb-lg-5"
+          >
+            <h3 class="h5 mb-1">{{ exp.company }}</h3>
+            <p class="text-muted mb-2">{{ exp.role }} • {{ exp.period }}</p>
+            <p class="mb-0">{{ exp.description }}</p>
           </div>
         </div>
       </div>
@@ -20,33 +25,37 @@
 </template>
 
 <script>
+  import axios from "axios";
   export default {
     data() {
       return {
-        about: {
-          introduction:
-            "I'm a Front-End developer who want to learn more and more to be the best version of myself and make a real effect.",
-          experience: [
-            {
-              company: "Freelancer",
-              role: "Junior Developer",
-              period: "2020 - Present",
-              description:
-                "Leading development of web applications using modern technologies like JS & PY.",
-            },
-            // Add more experience...
-          ],
-        },
+        aboutData: {},
       };
+    },
+    methods: {
+      async fetch() {
+        let result = await axios.get("_nuxt/data/about.json");
+        if (result.status == 200) {
+          this.aboutData = result.data.about;
+        }
+      },
+    },
+    async mounted() {
+      this.fetch();
     },
   };
 </script>
-<style>
-  .bl {
-    border-left: 4px solid #c1121f !important;
-    padding-left: 1rem;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 1rem;
+
+<style scoped>
+  .border-start {
+    border-color: #007bff !important;
+  }
+  @media (min-width:362px) {
+    .mb-lg-5 {
+      margin-bottom: 2.5rem;
+    }
+  }
+  .h3 {
+    margin-bottom: 20px;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <article class="mb-4">
+  <article class="mb-0">
     <div class="text-muted mb-2">{{ data.date }}</div>
     <h2 class="h3 mb-2 text-dark">I'm a</h2>
     <h2 id="auto" class="h3 mb-2 hh" style="color: #14213d"></h2>
@@ -17,16 +17,17 @@
     },
     methods: {
       auto() {
-        const text = "Front-End Developer";
+        const text = "Front-End-Developer";
         let i = 0;
         let speed = 300;
         function typeWriter() {
           if (i < text.length) {
-            document.getElementById("auto").innerHTML += text.charAt(i);
+            let element = document.getElementById("auto");
+            element.innerText += text.charAt(i);
             i++;
             setTimeout(typeWriter, speed);
           } else {
-            document.getElementById("auto").innerHTML = "";
+            document.getElementById("auto").innerText = "";
             i = 0;
             setTimeout(typeWriter, speed);
           }
@@ -45,7 +46,7 @@
     padding-left: 1rem;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-bottom: 1rem;
+    margin-bottom: 10px !important;
   }
   .hh {
     transition: all 2s;

@@ -11,9 +11,10 @@
         <nuxt-link :to="{ name: 'projects' }">Projects</nuxt-link>
       </li>
       <li class="nav-item">
-        <nuxt-link
-          to="https://drive.google.com/file/d/12LmboVXgwjP2Bn3WIn2dBr1__Db3Xv7d/view?usp=sharing"
-          >Resume</nuxt-link
+        <a
+          href="https://drive.google.com/file/d/1pwTAOyeWaBEJJYZLxEa0XZyogPM67cxb/view?usp=sharing"
+          target="_blank"
+          >Resume</a
         >
       </li>
     </ul>
@@ -41,6 +42,11 @@
   }
   li {
     padding: 5px;
+  }
+  @media (min-width: 362px) {
+    .nav {
+      gap: 20px;
+    }
   }
   .router-link-active,
   .router-link-exact-active {

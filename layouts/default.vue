@@ -2,6 +2,7 @@
   <div class="default">
     <nv />
     <slot></slot>
+    <ft />
   </div>
 </template>
 

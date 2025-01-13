@@ -27,7 +27,6 @@ export default {
   plugins: [
     "~/plugins/vue-transitions.js",
     { src: "~/plugins/bootstrap.client.js", mode: "client" },
-    "~/plugins/fontawesome.js",
   ],
   components: true,
   pageTransition: {

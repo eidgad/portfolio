@@ -1,0 +1,13 @@
+{
+  "about": {
+    "introduction": "I'm a Front-End developer who wants to learn more and more to be the best version of myself and make a real impact.",
+    "experience": [
+      {
+        "company": "Freelancer",
+        "role": "Junior Front-End Developer",
+        "period": "2020 - Present",
+        "description": "Leading development of web applications using modern technologies like JS & PY."
+      }
+    ]
+  }
+}
